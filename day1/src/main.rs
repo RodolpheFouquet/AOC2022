@@ -4,7 +4,7 @@ use std::fs;
 fn main() {
     let mut maxs = (0, 0, 0);
     let content =
-        fs::read_to_string("input.txt").expect("LogRocket: Should have been able to read the file");
+        fs::read_to_string("input.txt").expect("Should have been able to read the file");
 
     content.lines().fold(0, |acc, line| {
         let res = line.parse::<i32>();

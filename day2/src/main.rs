@@ -109,7 +109,7 @@ fn calculate_outcome(play: (RockPaperScissors, RockPaperScissors)) -> i32 {
 
 fn main() {
     let content =
-        fs::read_to_string("input.txt").expect("LogRocket: Should have been able to read the file");
+        fs::read_to_string("input.txt").expect("Should have been able to read the file");
 
     let result = content
         .lines()
