@@ -85,14 +85,14 @@ impl Bridge {
         }
 
         if head.x == tail.x {
-            return Position { x: 0, y: y_mult };
+            Position { x: 0, y: y_mult }
         } else if head.y == tail.y {
-            return Position { x: x_mult, y: 0 };
+            Position { x: x_mult, y: 0 }
         } else {
-            return Position {
+            Position {
                 x: x_mult,
                 y: y_mult,
-            };
+            }
         }
     }
 
