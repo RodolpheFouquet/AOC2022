@@ -1,0 +1,19 @@
+monkeys = { monkey ~ (NEWLINE ~ NEWLINE ~ monkey)* }
+
+monkey = { monkey_init ~ NEWLINE ~ start ~ NEWLINE ~ operation ~ NEWLINE ~ test ~ NEWLINE ~ target_true ~ NEWLINE ~ target_false}
+
+monkey_id = { ASCII_DIGIT+ }
+monkey_init = { "Monkey" ~ " " ~ monkey_id+ ~":"}
+
+start = {"  Starting items:" ~ (" " ~ start_item~ ",")* ~ (" " ~ start_item)}
+start_item = { ASCII_DIGIT+ } 
+
+operation = {"  Operation: new = " ~ old ~ " " ~ op ~ " " ~ (old | second_term)}
+old = {"old"}
+op = { plus | mult }
+mult = { "*" }
+plus = { "+" }
+second_term = { ASCII_DIGIT+ }
+test = {"  Test: divisible by " ~ second_term}
+target_true = {"    If true: throw to monkey " ~ monkey_id}
+target_false = {"    If false: throw to monkey " ~ monkey_id}
